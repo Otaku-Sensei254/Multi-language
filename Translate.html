@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Help Translate</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>🌍 Help Translate</h1>
+            <p>Help Us translate to local language for our new App</p>
+            <p>Pick your language and translate the words below</p>
+
+            <form id="translateForm" action="https://api.web3forms.com/submit"
+                method="POST">
+                <!-- Required Web3Forms key -->
+                <input type="hidden" name="access_key"
+                    value="13b0a273-42bb-4565-985f-81dd4234104b">
+                <input type="hidden" name="subject"
+                    value="New Translation Contribution">
+
+                <!-- Language Picker -->
+                <label for="language">Select Language:</label>
+                <select name="language" id="language" required>
+                    <option value>--Choose Language--</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="Kikuyu">Kikuyu</option>
+                    <option value="Kamba">Kamba</option>
+                    <option value="Luhya">Luhya</option>
+                    <option value="Luo">Luo</option>
+                    <option value="Kisii">Kisii</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Meru">Meru</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Somali">Somali</option>
+                    <option value="Italian">Italian</option>
+                </select>
+
+                <!-- Words will be generated here -->
+                <div id="translationFields" class="hidden"></div>
+
+                <button type="submit" id="submitBtn">Submit
+                    Translations</button>
+            </form>
+
+            <!-- Thank you message (hidden initially) -->
+            <div id="thankYouMessage" class="hidden">
+                <h2>🎉 Thank you for your help!</h2>
+                <p>Much appreciated 🙏</p>
+            </div>
+        </div>
+
+        <script src="local.js"></script>
+    </body>
+</html>
